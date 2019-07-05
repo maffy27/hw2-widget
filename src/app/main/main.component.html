@@ -1,0 +1,23 @@
+<div class="element-left">
+  <div class="element-bg-img"><img width="310" height="180" src="{{hotel.img}}" alt="" class="img-responsive"> </div>
+  <div class="element-left-bottom">
+    <div class="ele-strip">
+      <ul>
+        <li *ngFor="let hotel of hotels | hotelsFilter" (click)="selectType(hotel)"><a href="#">{{hotel}}&#9733;</a></li>
+      </ul>
+    </div>
+    <div class="village">
+      <h3>Righteous indignation & like</h3>
+      <span class="line"> </span>
+      <div class="activity_box">
+        <div class="scrollbar" id="style-2">
+
+          <div class="activity-row" *ngFor="let hotel of hotels | hotelDetail: selectedHotelType">
+            <app-hotel-item [hotel]="hotel" (click)="selectHotel(hotel)"></app-hotel-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
